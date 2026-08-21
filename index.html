@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albasroh Decoration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* PENGATURAN DASAR (CSS) */
+        :root {
+            --primary-gold: #c2993b; /* Warna Emas Albasroh */
+            --primary-green: #113b24; /* Warna Hijau Tua Albasroh */
+            --text-color: #333;
+            --bg-color: #f9faf9; 
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* NAVIGASI MENU */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-gold);
+        }
+
+        nav h2 {
+            color: var(--primary-green);
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* HERO SECTION (BAGIAN ATAS) */
+        .hero {
+            /* Ganti URL ini dengan foto dekorasi panggung utama Albasroh */
+            background: linear-gradient(rgba(17, 59, 36, 0.7), rgba(17, 59, 36, 0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary-gold);
+        }
+
+        .hero h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .btn {
+            background-color: var(--primary-gold);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #a8832f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-green {
+            background-color: #25d366; /* Warna khas WhatsApp */
+            margin: 10px;
+        }
+        
+        .btn-green:hover {
+            background-color: #1ebc5a;
+        }
+
+        /* SECTION UMUM */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-green);
+        }
+        
+        .section-subtitle {
+            margin-bottom: 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* LAYANAN KAMI - GRID SYSTEM UNTUK 6 ITEM */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-gold);
+            transition: transform 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--primary-green);
+        }
+
+        /* GALERI PORTOFOLIO */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* KEUNGGULAN KAMI */
+        .features {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+        
+        .features-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .feature-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .feature-item h4 {
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER & KONTAK */
+        footer {
+            background-color: #0d2e1b;
+            color: white;
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .admin-contacts {
+            margin-bottom: 30px;
+        }
+        
+        .instagram {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE UNTUK HP */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <nav>
+        <h2>Albasroh Decoration</h2>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- BERANDA -->
+    <header class="hero" id="beranda">
+        <h1>Wujudkan Momen Spesialmu</h1>
+        <h3>Jadi Lebih Berkesan Bersama Kami</h3>
+        <p>Indah di setiap momen, berkesan selamanya. Kami menangani semua acara dengan sepenuh hati.</p>
+        <a href="#kontak" class="btn">Pesan Sekarang (Book Now)</a>
+    </header>
+
+    <!-- LAYANAN KAMI -->
+    <section id="layanan">
+        <h2>Kami Menyediakan</h2>
+        <p class="section-subtitle">Beragam layanan profesional untuk menyempurnakan hari bahagia Anda.</p>
+        
+        <div class="services-container">
+            <div class="service-box">
+                <h3>Dekorasi Semua Acara</h3>
+                <p>Melayani dekorasi untuk Pernikahan, Khitanan, Aqiqah, Ulang Tahun, Event Kantor, dan acara lainnya.</p>
+            </div>
+            <div class="service-box">
+                <h3>Make Up Profesional</h3>
+                <p>Layanan Make Up Pengantin & Make Up Wisuda secara profesional untuk memancarkan kecantikan terbaik Anda.</p>
+            </div>
+            <div class="service-box">
+                <h3>Prosesi Lengser</h3>
+                <p>Menyelenggarakan Prosesi Lengser khas Sunda & Jawa yang sakral, bermakna, dan berkesan.</p>
+            </div>
+            <div class="service-box">
+                <h3>Upacara Adat</h3>
+                <p>Layanan Upacara Adat Sunda & Adat Jawa yang lengkap dan khusus sesuai tradisi.</p>
+            </div>
+            <div class="service-box">
+                <h3>Tim Hadroh</h3>
+                <p>Menyediakan penampilan Hadroh Islami yang syahdu untuk Acara Religi & Formal Anda.</p>
+            </div>
+            <div class="service-box">
+                <h3>Jasa Fotografer</h3>
+                <p>Dokumentasi momen terbaikmu dengan hasil jepretan yang berkualitas dan gaya kekinian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri">
+        <h2>Galeri Momen</h2>
+        <p class="section-subtitle">Beberapa cuplikan hasil karya Albasroh Decoration.</p>
+        
+        <div class="gallery-grid">
+            <!-- GANTI URL GAMBAR DI BAWAH INI DENGAN LINK FOTO PORTFOLIO ANDA -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dekorasi Panggung">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make Up Pengantin">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Upacara Adat">
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN (NILAI PLUS DARI POSTER) -->
+    <div class="features">
+        <div class="features-container">
+            <div class="feature-item">
+                <h4>Kreatif & Kekinian</h4>
+            </div>
+            <div class="feature-item">
+                <h4>Berkualitas & Profesional</h4>
+            </div>
+            <div class="feature-item">
+                <h4>Tim Berpengalaman</h4>
+            </div>
+            <div class="feature-item">
+                <h4>Melayani Sepenuh Hati</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER / KONTAK -->
+    <footer id="kontak">
+        <h2 style="color: var(--primary-gold); font-family: 'Playfair Display', serif; margin-bottom: 10px;">Percayakan Momen Terbaikmu Pada Kami</h2>
+        <p class="contact-info">Hubungi Admin kami untuk konsultasi dan pemesanan.</p>
+        
+        <div class="admin-contacts">
+            <a href="https://wa.me/6285864591602?text=Halo%20Admin%20Gunawan,%20saya%20ingin%20bertanya%20tentang%20Albasroh%20Decoration" class="btn btn-green" target="_blank">
+                &#128222; WA: Gunawan Taufik (0858-6459-1602)
+            </a>
+            <a href="https://wa.me/6285759417244?text=Halo%20Admin%20Lukmanul,%20saya%20ingin%20bertanya%20tentang%20Albasroh%20Decoration" class="btn btn-green" target="_blank">
+                &#128222; WA: Lukmanul Hakim (0857-5941-7244)
+            </a>
+        </div>
+        
+        <div>
+            <a href="https://instagram.com/albasroh.decoration" class="instagram" target="_blank">
+                Ikuti kami di Instagram: <strong>@albasroh.decoration</strong>
+            </a>
+        </div>
+        
+        <p style="margin-top: 40px; font-size: 0.9rem; color: #888;">
+            &copy; 2026 Albasroh Decoration - Indah di setiap momen, berkesan selamanya.
+        </p>
+    </footer>
+
+</body>
+</html>
