@@ -9,8 +9,8 @@
     <style>
         /* PENGATURAN DASAR (CSS) */
         :root {
-            --primary-gold: #c2993b; /* Warna Emas Albasroh */
-            --primary-green: #113b24; /* Warna Hijau Tua Albasroh */
+            --primary-gold: #c2993b; 
+            --primary-green: #113b24; 
             --text-color: #333;
             --bg-color: #f9faf9; 
         }
@@ -37,10 +37,10 @@
             font-weight: 700;
         }
 
-        /* NAVIGASI MENU */
+        /* NAVIGASI MENU & LOGO */
         nav {
             background-color: white;
-            padding: 15px 50px;
+            padding: 10px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,9 +52,14 @@
             border-bottom: 3px solid var(--primary-gold);
         }
 
-        nav h2 {
-            color: var(--primary-green);
-            font-size: 24px;
+        .nav-logo {
+            height: 70px; /* Mengatur tinggi logo di menu */
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
         }
 
         nav ul {
@@ -74,9 +79,8 @@
             color: var(--primary-gold);
         }
 
-        /* HERO SECTION (BAGIAN ATAS) */
+        /* HERO SECTION */
         .hero {
-            /* Ganti URL ini dengan foto dekorasi panggung utama Albasroh */
             background: linear-gradient(rgba(17, 59, 36, 0.7), rgba(17, 59, 36, 0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             height: 100vh;
             display: flex;
@@ -86,7 +90,7 @@
             text-align: center;
             color: white;
             padding: 20px;
-            margin-top: 60px;
+            margin-top: 90px;
         }
 
         .hero h1 {
@@ -126,7 +130,7 @@
         }
         
         .btn-green {
-            background-color: #25d366; /* Warna khas WhatsApp */
+            background-color: #25d366; 
             margin: 10px;
         }
         
@@ -154,7 +158,7 @@
             font-size: 1.1rem;
         }
 
-        /* LAYANAN KAMI - GRID SYSTEM UNTUK 6 ITEM */
+        /* LAYANAN KAMI */
         .services-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,7 +184,7 @@
             color: var(--primary-green);
         }
 
-        /* GALERI PORTOFOLIO */
+        /* GALERI */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -229,7 +233,7 @@
             font-size: 1.2rem;
         }
 
-        /* FOOTER & KONTAK */
+        /* FOOTER */
         footer {
             background-color: #0d2e1b;
             color: white;
@@ -237,10 +241,6 @@
             padding: 60px 20px 30px;
         }
 
-        .contact-info {
-            margin-bottom: 30px;
-        }
-        
         .admin-contacts {
             margin-bottom: 30px;
         }
@@ -257,27 +257,29 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
-                padding: 15px;
+                padding: 10px;
+            }
+            .nav-logo {
+                height: 50px;
             }
             nav ul {
-                margin-top: 15px;
+                margin-top: 10px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             .hero h1 {
                 font-size: 2.2rem;
             }
-            .hero h3 {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGASI -->
+    <!-- NAVIGASI DENGAN LOGO -->
     <nav>
-        <h2>Albasroh Decoration</h2>
+        <a href="#beranda">
+            <img src="Copilot_20260821_220041.jpg" alt="Logo Albasroh Decoration" class="nav-logo">
+        </a>
         <ul>
             <li><a href="#beranda">Beranda</a></li>
             <li><a href="#layanan">Layanan</a></li>
@@ -333,7 +335,6 @@
         <p class="section-subtitle">Beberapa cuplikan hasil karya Albasroh Decoration.</p>
         
         <div class="gallery-grid">
-            <!-- GANTI URL GAMBAR DI BAWAH INI DENGAN LINK FOTO PORTFOLIO ANDA -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dekorasi Panggung">
             </div>
@@ -346,7 +347,7 @@
         </div>
     </section>
 
-    <!-- KEUNGGULAN (NILAI PLUS DARI POSTER) -->
+    <!-- KEUNGGULAN KAMI -->
     <div class="features">
         <div class="features-container">
             <div class="feature-item">
@@ -367,7 +368,7 @@
     <!-- FOOTER / KONTAK -->
     <footer id="kontak">
         <h2 style="color: var(--primary-gold); font-family: 'Playfair Display', serif; margin-bottom: 10px;">Percayakan Momen Terbaikmu Pada Kami</h2>
-        <p class="contact-info">Hubungi Admin kami untuk konsultasi dan pemesanan.</p>
+        <p style="margin-bottom: 30px;">Hubungi Admin kami untuk konsultasi dan pemesanan.</p>
         
         <div class="admin-contacts">
             <a href="https://wa.me/6285864591602?text=Halo%20Admin%20Gunawan,%20saya%20ingin%20bertanya%20tentang%20Albasroh%20Decoration" class="btn btn-green" target="_blank">
